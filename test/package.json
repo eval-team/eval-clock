@@ -1,0 +1,35 @@
+{
+  "name": "test",
+  "version": "2.3.0",
+  "description": "A test page for React-Clock.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "format": "biome format",
+    "lint": "biome lint",
+    "preview": "vite preview",
+    "test": "yarn lint && yarn tsc && yarn format",
+    "tsc": "tsc"
+  },
+  "author": {
+    "name": "Wojciech Maj",
+    "email": "kontakt@wojtekmaj.pl"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@wojtekmaj/date-utils": "^1.5.0",
+    "@wojtekmaj/react-hooks": "^1.20.0",
+    "react": "^18.2.0",
+    "react-clock": "workspace:packages/react-clock",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.0",
+    "@types/react": "*",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.5.2",
+    "vite": "^5.0.0"
+  }
+}
