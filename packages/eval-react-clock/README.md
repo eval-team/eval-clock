@@ -1,24 +1,24 @@
-[![npm](https://img.shields.io/npm/v/react-clock.svg)](https://www.npmjs.com/package/react-clock) ![downloads](https://img.shields.io/npm/dt/react-clock.svg) [![CI](https://github.com/wojtekmaj/react-clock/actions/workflows/ci.yml/badge.svg)](https://github.com/wojtekmaj/react-clock/actions)
+[![npm](https://img.shields.io/npm/v/eval-react-clock.svg)](https://www.npmjs.com/package/eval-react-clock) ![downloads](https://img.shields.io/npm/dt/eval-react-clock.svg) [![CI](https://github.com/wojtekmaj/eval-react-clock/actions/workflows/ci.yml/badge.svg)](https://github.com/wojtekmaj/eval-react-clock/actions)
 
-# react-clock
+# eval-react-clock
 
 An analog clock for your React app.
 
 ## tl;dr
 
-- Install by executing `npm install react-clock` or `yarn add react-clock`.
-- Import by adding `import Clock from 'react-clock'`.
+- Install by executing `npm install eval-react-clock` or `yarn add eval-react-clock`.
+- Import by adding `import Clock from 'eval-react-clock'`.
 - Use by adding `<Clock />`.
 
 ## Demo
 
 A minimal demo page can be found in `sample` directory.
 
-[Online demo](https://projects.wojtekmaj.pl/react-clock/) is also available!
+[Online demo](https://projects.wojtekmaj.pl/eval-react-clock/) is also available!
 
 ## Installation
 
-Add react-clock to your project by executing `npm install react-clock` or `yarn add react-clock`.
+Add eval-react-clock to your project by executing `npm install eval-react-clock` or `yarn add eval-react-clock`.
 
 ### Usage
 
@@ -26,7 +26,7 @@ Here's an example of basic usage:
 
 ```tsx
 import { useEffect, useState } from 'react';
-import Clock from 'react-clock';
+import Clock from 'eval-react-clock';
 
 function MyApp() {
   const [value, setValue] = useState(new Date());
@@ -50,10 +50,10 @@ function MyApp() {
 
 ### Custom styling
 
-If you want to use default react-clock styling to build upon it, you can import react-clock's styles by using:
+If you want to use default eval-react-clock styling to build upon it, you can import eval-react-clock's styles by using:
 
 ```ts
-import 'react-clock/dist/Clock.css';
+import 'eval-react-clock/dist/Clock.css';
 ```
 
 ## User guide
@@ -66,7 +66,7 @@ Displays a complete clock.
 
 | Prop name                | Description                                                                                                                                                                                                                                                    | Default value                         | Example values                                                                                      |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| className                | Class name(s) that will be added along with `"react-clock"` to the main react-clock `<time>` element.                                                                                                                                                          | n/a                                   | <ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul> |
+| className                | Class name(s) that will be added along with `"eval-react-clock"` to the main eval-react-clock `<time>` element.                                                                                                                                                          | n/a                                   | <ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul> |
 | formatHour               | Function called to override default formatting of hour marks. Can be used to use your own formatting function.                                                                                                                                                 | (default formatter)                   | `(locale, hour) => formatHour(hour, 'HH')`                                                          |
 | hourHandLength           | Hour hand length, in %.                                                                                                                                                                                                                                        | `50`                                  | `80`                                                                                                |
 | hourHandOppositeLength   | The length of the part of an hour hand on the opposite side the hand is pointing to, in %.                                                                                                                                                                     | `10`                                  | `20`                                                                                                |
