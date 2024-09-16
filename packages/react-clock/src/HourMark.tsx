@@ -8,15 +8,20 @@ type HourMarkProps = React.ComponentProps<typeof Mark> & {
   formatHour?: typeof defaultFormatHour;
   locale?: string;
   number?: number;
+  use24HourFormat?: boolean;
 };
 
 const HourMark: React.FC<HourMarkProps> = memo(function HourMark({
   formatHour = defaultFormatHour,
   locale,
   number,
+  use24HourFormat = false,
   ...otherProps
 }: HourMarkProps) {
-  return <Mark number={number ? formatHour(locale, number) : null} {...otherProps} />;
+  const formattedNumber = number
+    ? formatHour(locale, number, use24HourFormat)
+    : null;
+  return <Mark number={formattedNumber} {...otherProps} />;
 });
 
 export default HourMark;

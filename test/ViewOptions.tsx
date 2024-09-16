@@ -1,3 +1,5 @@
+import React from 'react';
+
 type ViewOptionsProps = {
   renderHourMarks: boolean;
   renderMinuteHand: boolean;
@@ -5,12 +7,14 @@ type ViewOptionsProps = {
   renderNumbers: boolean;
   renderSecondHand: boolean;
   useMillisecondPrecision: boolean;
-  setRenderHourMarks: (renderHourMarks: boolean) => void;
-  setRenderMinuteHand: (renderMinuteHand: boolean) => void;
-  setRenderMinuteMarks: (renderMinuteMarks: boolean) => void;
-  setRenderNumbers: (renderNumbers: boolean) => void;
-  setRenderSecondHand: (renderSecondHand: boolean) => void;
-  setUseMillisecondPrecision: (useMillisecondPrecision: boolean) => void;
+  use24HourFormat: boolean;
+  setRenderHourMarks: (value: boolean) => void;
+  setRenderMinuteHand: (value: boolean) => void;
+  setRenderMinuteMarks: (value: boolean) => void;
+  setRenderNumbers: (value: boolean) => void;
+  setRenderSecondHand: (value: boolean) => void;
+  setUseMillisecondPrecision: (value: boolean) => void;
+  setUse24HourFormat: (value: boolean) => void;
 };
 
 export default function ViewOptions({
@@ -20,78 +24,24 @@ export default function ViewOptions({
   renderNumbers,
   renderSecondHand,
   useMillisecondPrecision,
+  use24HourFormat,
   setRenderHourMarks,
   setRenderMinuteHand,
   setRenderMinuteMarks,
   setRenderNumbers,
   setRenderSecondHand,
   setUseMillisecondPrecision,
+  setUse24HourFormat,
 }: ViewOptionsProps) {
-  function onRenderMinuteHandChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setRenderMinuteHand(checked);
-  }
-
-  function onRenderSecondHandChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setRenderSecondHand(checked);
-  }
-
-  function onRenderHourMarksChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setRenderHourMarks(checked);
-  }
-
-  function onRenderMinuteMarksChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setRenderMinuteMarks(checked);
-  }
-
-  function onRenderNumbersChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setRenderNumbers(checked);
-  }
-
-  function onUseMillisecondPrecisionChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { checked } = event.target;
-
-    setUseMillisecondPrecision(checked);
-  }
-
   return (
     <fieldset>
       <legend>View options</legend>
 
       <div>
         <input
-          checked={renderMinuteHand}
-          id="renderMinuteHand"
-          onChange={onRenderMinuteHandChange}
-          type="checkbox"
-        />
-        <label htmlFor="renderMinuteHand">Show minute hand</label>
-      </div>
-
-      <div>
-        <input
-          checked={renderSecondHand}
-          id="renderSecondHand"
-          onChange={onRenderSecondHandChange}
-          type="checkbox"
-        />
-        <label htmlFor="renderSecondHand">Show second hand</label>
-      </div>
-
-      <div>
-        <input
           checked={renderHourMarks}
           id="renderHourMarks"
-          onChange={onRenderHourMarksChange}
+          onChange={(event) => setRenderHourMarks(event.target.checked)}
           type="checkbox"
         />
         <label htmlFor="renderHourMarks">Show hour marks</label>
@@ -99,19 +49,9 @@ export default function ViewOptions({
 
       <div>
         <input
-          checked={renderMinuteMarks}
-          id="renderMinuteMarks"
-          onChange={onRenderMinuteMarksChange}
-          type="checkbox"
-        />
-        <label htmlFor="renderMinuteMarks">Show minute marks</label>
-      </div>
-
-      <div>
-        <input
           checked={renderNumbers}
           id="renderNumbers"
-          onChange={onRenderNumbersChange}
+          onChange={(event) => setRenderNumbers(event.target.checked)}
           type="checkbox"
         />
         <label htmlFor="renderNumbers">Show numbers</label>
@@ -119,12 +59,52 @@ export default function ViewOptions({
 
       <div>
         <input
+          checked={renderMinuteHand}
+          id="renderMinuteHand"
+          onChange={(event) => setRenderMinuteHand(event.target.checked)}
+          type="checkbox"
+        />
+        <label htmlFor="renderMinuteHand">Show minute hand</label>
+      </div>
+
+      <div>
+        <input
+          checked={renderMinuteMarks}
+          id="renderMinuteMarks"
+          onChange={(event) => setRenderMinuteMarks(event.target.checked)}
+          type="checkbox"
+        />
+        <label htmlFor="renderMinuteMarks">Show minute marks</label>
+      </div>
+
+      <div>
+        <input
+          checked={renderSecondHand}
+          id="renderSecondHand"
+          onChange={(event) => setRenderSecondHand(event.target.checked)}
+          type="checkbox"
+        />
+        <label htmlFor="renderSecondHand">Show second hand</label>
+      </div>
+
+      <div>
+        <input
           checked={useMillisecondPrecision}
           id="useMillisecondPrecision"
-          onChange={onUseMillisecondPrecisionChange}
+          onChange={(event) => setUseMillisecondPrecision(event.target.checked)}
           type="checkbox"
         />
         <label htmlFor="useMillisecondPrecision">Use millisecond precision</label>
+      </div>
+
+      <div>
+        <input
+          checked={use24HourFormat}
+          id="use24HourFormat"
+          onChange={(event) => setUse24HourFormat(event.target.checked)}
+          type="checkbox"
+        />
+        <label htmlFor="use24HourFormat">Use 24-hour format</label>
       </div>
     </fieldset>
   );

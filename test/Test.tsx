@@ -22,6 +22,7 @@ export default function Test() {
   const [renderNumbers, setRenderNumbers] = useState(true);
   const [renderSecondHand, setRenderSecondHand] = useState(true);
   const [useMillisecondPrecision, setUseMillisecondPrecision] = useState(false);
+  const [use24HourFormat, setUse24HourFormat] = useState(false);
   const [value, setValue] = useState<LooseValue>(now);
 
   const updateDate = useCallback(() => {
@@ -76,12 +77,14 @@ export default function Test() {
             renderNumbers={renderNumbers}
             renderSecondHand={renderSecondHand}
             useMillisecondPrecision={useMillisecondPrecision}
+            use24HourFormat={use24HourFormat}
             setRenderHourMarks={setRenderHourMarks}
             setRenderMinuteHand={setRenderMinuteHand}
             setRenderMinuteMarks={setRenderMinuteMarks}
             setRenderNumbers={setRenderNumbers}
             setRenderSecondHand={setRenderSecondHand}
             setUseMillisecondPrecision={setUseMillisecondPrecision}
+            setUse24HourFormat={setUse24HourFormat}
           />
         </aside>
         <main className="Test__container__content">
@@ -103,6 +106,7 @@ export default function Test() {
               size={200}
               useMillisecondPrecision={useMillisecondPrecision}
               value={value}
+              use24HourFormat={use24HourFormat}
             />
           </form>
           {renderDebugInfo()}

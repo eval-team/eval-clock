@@ -185,6 +185,13 @@ export type ClockProps = {
    * @example new Date()
    */
   value?: string | Date | null;
+  /**
+   * Whether to use 24-hour format.
+   *
+   * @default false
+   * @example true
+   */
+  use24HourFormat?: boolean;
 };
 
 /**
@@ -214,6 +221,7 @@ export default function Clock({
   secondHandWidth = 1,
   size = 150,
   useMillisecondPrecision,
+  use24HourFormat = false,
   value,
 }: ClockProps): React.ReactElement {
   function renderMinuteMarksFn() {
@@ -246,17 +254,20 @@ export default function Clock({
     }
 
     const hourMarks = [];
-    for (let i = 1; i <= 12; i += 1) {
+    const totalHours = use24HourFormat ? 24 : 12;
+    for (let i = 1; i <= totalHours; i += 1) {
+      const angle = (i / totalHours) * 360;
       hourMarks.push(
         <HourMark
           key={`hour_${i}`}
-          angle={i * 30}
+          angle={angle}
           formatHour={formatHour}
           length={hourMarksLength}
           locale={locale}
           name="hour"
           number={renderNumbers ? i : undefined}
           width={hourMarksWidth}
+          use24HourFormat={use24HourFormat}
         />,
       );
     }
@@ -274,10 +285,10 @@ export default function Clock({
 
   function renderHourHandFn() {
     const angle = value
-      ? getHours(value) * 30 +
-        getMinutes(value) / 2 +
-        getSeconds(value) / 120 +
-        (useMillisecondPrecision ? getMilliseconds(value) / 120000 : 0)
+      ? (getHours(value) % (use24HourFormat ? 24 : 12)) * (360 / (use24HourFormat ? 24 : 12)) +
+        getMinutes(value) / (use24HourFormat ? 4 : 2) +
+        getSeconds(value) / (use24HourFormat ? 240 : 120) +
+        (useMillisecondPrecision ? getMilliseconds(value) / (use24HourFormat ? 240000 : 120000) : 0)
       : 0;
 
     return (
