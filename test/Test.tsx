@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import Clock from 'react-clock';
+import Clock from 'eval-react-clock';
 import 'react-clock/dist/Clock.css';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';

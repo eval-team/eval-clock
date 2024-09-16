@@ -106,4 +106,12 @@ The MIT License.
       <a href="https://github.com/wojtekmaj">Wojciech Maj</a>
     </td>
   </tr>
+  <tr>
+    <td >
+      <img src="https://avatars.githubusercontent.com/u/78940372?v=4?v=4&s=128" width="64" height="64" alt="Nisar A">
+    </td>
+    <td>
+      <a href="https://github.com/niisara">Nisar A</a>
+    </td>
+  </tr>
 </table>

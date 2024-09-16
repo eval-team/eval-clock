@@ -1,5 +1,5 @@
 {
-  "name": "react-clock",
+  "name": "eval-react-clock",
   "version": "5.0.0",
   "description": "An analog clock for your React app.",
   "type": "module",
@@ -44,12 +44,7 @@
     "name": "Wojciech Maj",
     "email": "kontakt@wojtekmaj.pl"
   },
-  "contributors": [
-    {
-      "name": "Yin Hengli",
-      "email": "yinhengliben@gmail.com"
-    }
-  ],
+  "contributors": [],
   "license": "MIT",
   "dependencies": {
     "@wojtekmaj/date-utils": "^1.5.0",
@@ -83,8 +78,7 @@
     }
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "files": [
     "dist",
@@ -92,8 +86,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wojtekmaj/react-clock.git",
-    "directory": "packages/react-clock"
+    "url": "git+https://github.com/eval-team/eval-react-clock.git",
+    "directory": "packages/eval-react-clock"
   },
-  "funding": "https://github.com/wojtekmaj/react-clock?sponsor=1"
+  "funding": "https://github.com/eval-team/eval-react-clock?sponsor=1"
 }
