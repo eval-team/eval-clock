@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/eval-react-clock.svg)](https://www.npmjs.com/package/eval-react-clock) ![downloads](https://img.shields.io/npm/dt/eval-react-clock.svg) [![CI](https://github.com/wojtekmaj/eval-react-clock/actions/workflows/ci.yml/badge.svg)](https://github.com/wojtekmaj/eval-react-clock/actions)
+[![npm](https://img.shields.io/npm/v/eval-react-clock.svg)](https://www.npmjs.com/package/eval-react-clock) ![downloads](https://img.shields.io/npm/dt/eval-react-clock.svg) [![CI](https://github.com/eval-team/eval-react-clock/actions/workflows/ci.yml/badge.svg)](https://github.com/eval-team/eval-react-clock/actions)
 
 # eval-react-clock
 
@@ -9,12 +9,6 @@ An analog clock for your React app.
 - Install by executing `npm install eval-react-clock` or `yarn add eval-react-clock`.
 - Import by adding `import Clock from 'eval-react-clock'`.
 - Use by adding `<Clock />`.
-
-## Demo
-
-A minimal demo page can be found in `sample` directory.
-
-[Online demo](https://projects.wojtekmaj.pl/eval-react-clock/) is also available!
 
 ## Installation
 
