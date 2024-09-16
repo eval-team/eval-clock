@@ -18,9 +18,7 @@ const HourMark: React.FC<HourMarkProps> = memo(function HourMark({
   use24HourFormat = false,
   ...otherProps
 }: HourMarkProps) {
-  const formattedNumber = number
-    ? formatHour(locale, number, use24HourFormat)
-    : null;
+  const formattedNumber = number ? formatHour(locale, number, use24HourFormat) : null;
   return <Mark number={formattedNumber} {...otherProps} />;
 });
 
